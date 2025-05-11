@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+// *component: 헤더 컴포넌트
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const mHeaderRef = useRef<HTMLDivElement>(null);

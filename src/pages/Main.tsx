@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import FormBox from '../components/FormBox';
 
+// *PAGE: 메인 페이지
 export default function Main() {
     const ctaRef = useRef<HTMLElement>(null);
 

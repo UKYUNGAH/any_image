@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+// *component: 푸터 컴포넌트
 const Footer = () => {
     return (
         <footer className="footer">

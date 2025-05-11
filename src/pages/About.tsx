@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const About: React.FC = () => {
+// *PAGE: 어바웃 페이지
+const About = () => {
     const [openAccordion, setOpenAccordion] = useState<number | null>(null);
 
     const handleAccordionClick = (index: number) => {

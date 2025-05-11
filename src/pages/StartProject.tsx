@@ -1,5 +1,6 @@
 import FormBox from '../components/FormBox';
 
+// *PAGE: StartProject 페이지
 const StartProject = () => {
     return (
         <main className="start_project">

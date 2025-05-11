@@ -1,5 +1,8 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
 
+// *component: 폼 박스 컴포넌트
+// #ISSUE: 폼 데이터(이름, 이메일, 메시지)와 파일 업로드 처리 백엔드 API 구현 필요
+
 interface FormBoxProps {
     buttonText?: string;
     className?: string;

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-// 페이지 이동 시 스크롤을 맨 위로 이동시키는 컴포넌트
+// *component: 페이지 이동 시 스크롤을 맨 위로 이동시키는 컴포넌트
 const ScrollToTop = () => {
     const { pathname } = useLocation();
 
