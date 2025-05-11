@@ -1,0 +1,410 @@
+/* ====================== 공통 STYLE ====================== */
+/* 
+*프로젝트 전반에 걸쳐 일관된 색상과 효과를 사용하기 위한 CSS 입니다
+* 수정 시 전체 사이트에 영향을 미치므로 신중하게 변경해주세요! */
+
+/* 폰트 설정 */
+/*  폰트 4종 가중치 설정 (Regular, Medium, Bold, ExtraBold) - 로컬과 CDN 경로 모두 지정 */
+/* ================================
+    Font: Inter (Regular ~ ExtraBold)
+    Source: Local first, fallback to Google CDN
+================================= */
+@font-face {
+    font-family: 'Inter';
+    src: local('Inter'), url('/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype'),
+        url('https://fonts.gstatic.com/s/inter/v12/UcCO3FwrKylV3YgMR-Y7.ttf') format('truetype');
+    font-weight: 100 900; /* variable font는 weight 범위 지정 */
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 색상 변수 정의 */
+/* 프로젝트 전체에서 사용할 CSS 변수 - 색상 일관성 유지를 위함 */
+:root {
+    --bs-point: #ff0021; /* 포인트 */
+    --bs-dark-red: #e70422; /* 포인트 */
+    --bs-light-red: rgba(255, 0, 33, 7%); /* 포인트 */
+    --bs-green: #4bd669; /* 서브 그린 */
+    --bs-text-main: #333333; /* 주요 텍스트 */
+    --bs-text-sub1: #aaaaaa; /* 보조 텍스트 */
+    --bs-text-sub2: #666666; /* 보조 텍스트 */
+    --bs-border: #eeeeee; /* border */
+    --bs-line: #dddddd; /* 경계선 */
+    --bs-bg-light: #f9f9f9; /* 밝은 배경 */
+    --bs-white: #fff; /* 밝은 배경 */
+    --bs-gradient-start: #ff0021; /* 그라디언트 시작 */
+    --bs-gradient-end: #990014; /* 그라디언트 끝 */
+    --gd-gradient: linear-gradient(135deg, #ff0021, #990014);
+}
+
+/* ====================== 버튼 BUTTON ====================== */
+.btn {
+    display: inline-block;
+    padding: 16px 0;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.2s ease-in;
+    cursor: pointer;
+}
+
+.btn_primary {
+    background: var(--bs-point);
+    color: var(--bs-white);
+}
+
+.btn_primary:hover {
+    background: var(--bs-dark-red);
+}
+
+.btn_outline {
+    border: 1px solid var(--bs-point);
+    color: var(--bs-point);
+}
+
+.btn_outline:hover {
+    background: var(--bs-point);
+    color: var(--bs-white);
+}
+
+.btn_green {
+    background: var(--bs-green);
+    color: var(--bs-white);
+    border-radius: 5px;
+    padding: 8px 20px;
+}
+
+.btn_green:hover {
+    background: #40b85a;
+}
+
+.btn_shadow {
+    background: var(--bs-point);
+    color: var(--bs-white);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btn_shadow:hover {
+    background: var(--bs-dark-red);
+}
+
+/* ====================== 컨테이너 ====================== */
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 120px 0;
+}
+
+/* ====================== 헤더 HEADER ====================== */
+.header {
+    background: var(--bs-white);
+    z-index: 999;
+}
+.header .inner {
+    position: relative;
+    max-width: 1440px;
+    width: 100%;
+    height: 100%;
+    margin: 0px auto;
+    padding: 16px 0;
+    display: flex;
+    gap: 40px;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+
+.header .right {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.header .m_header {
+    display: none;
+}
+.header .ham_btn {
+    display: none;
+}
+
+.header h1 {
+    width: 275px;
+}
+
+.header h1 a {
+    display: block;
+    width: 100%;
+}
+
+.header h1 img {
+    display: block;
+    width: 100%;
+}
+
+.header ul {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.header li {
+    margin-top: 3px;
+}
+
+.header li a {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 12px 10px;
+    color: #333;
+}
+
+.header li a:hover {
+    background: var(--bs-white);
+    border-radius: 10px;
+    color: var(--bs-point);
+}
+
+.header .right a.btn {
+    padding: 10px 26px;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.header .m_header nav {
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+    top: 0;
+    left: 0;
+}
+
+.header .m_header ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: var(--bs-white);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.header .ham_btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    z-index: 1001;
+}
+
+.header .ham_btn span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #555;
+    transition: all 0.3s ease;
+    border-radius: 40px;
+}
+
+.header .ham_btn span:first-child {
+    top: 6px;
+}
+
+.header .ham_btn span:last-child {
+    top: 14px;
+}
+
+.header .ham_btn.open span:first-child {
+    transform: rotate(45deg);
+    top: 10px;
+}
+
+.header .ham_btn.open span:last-child {
+    transform: rotate(-45deg);
+    top: 10px;
+}
+
+.header .m_header li {
+    text-align: center;
+    width: 100%;
+}
+
+.header .m_header a {
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+}
+.header .m_header a:hover {
+    background: var(--bs-bg-light);
+    color: var(--bs-point);
+}
+
+/* 헤더 모바일 메뉴 스타일 */
+/* 햄버거 메뉴 버튼 */
+.header .mobile_menu_btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.header .mobile_menu_btn span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: var(--bs-text-main);
+    transition: all 0.3s ease;
+}
+
+/* 모바일 메뉴 스타일 */
+.header .mobile_menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    padding: 20px;
+    flex-direction: column;
+}
+
+.header .mobile_menu.active {
+    display: flex;
+}
+
+.header .mobile_menu ul {
+    flex-direction: column;
+    width: 100%;
+}
+
+.header .mobile_menu li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid var(--bs-border);
+}
+
+.header .mobile_menu li:last-child {
+    border-bottom: none;
+}
+
+.header .mobile_menu li a {
+    display: block;
+    padding: 15px 0;
+    font-size: 16px;
+}
+
+.header .mobile_menu .right {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.header .mobile_menu .right a {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+/* ====================== 푸터 FOOTER ====================== */
+.footer {
+    background: var(--bs-point);
+    color: var(--bs-white);
+}
+
+.footer .footer_wrap {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 40px 40px;
+}
+
+.footer .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #cfcfcf;
+}
+
+.footer .left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer .left img {
+    width: 40px;
+}
+
+.footer .left strong {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.footer .right {
+    display: flex;
+    align-items: center;
+}
+
+.footer .service {
+    position: relative;
+}
+
+.footer .service a {
+    font-size: 16px;
+    color: var(--bs-white);
+    font-weight: 400;
+}
+
+.footer .service1 a {
+    margin: 0 10px 0 0;
+}
+
+.footer .service2 a {
+    margin: 0 0 0 10px;
+}
+
+.footer .service1 a::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 20px;
+    right: 0;
+    top: 2px;
+    background: var(--bs-white);
+}
+
+.footer .service a:hover {
+    color: #ffffffe3;
+}
+
+.footer .bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.footer .bottom p {
+    font-size: 16px;
+}
+
+.footer .bottom address {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.footer .bottom address a {
+    color: var(--bs-white);
+    margin-left: 5px;
+}
+
+.footer .bottom address a:hover {
+    color: #ffffffe3;
+}
